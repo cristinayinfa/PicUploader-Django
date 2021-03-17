@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+</head>
+
+<body>
+
+	<!-- Display edit form -->
+	<h2> What do you want to change? </h2>
+	<form id= 'edit_form' method = 'POST' enctype='multipart/form-data'> {% csrf_token %}
+	{{ form.as_p }}
+
+	<!-- Cancel, Delete & Save buttons -->
+	<button type='submit' name='cancel'> Cancel </button>
+	<button type='submit' name='delete'> Delete </button>
+	<button type='submit' name='save'> Save </button>
+	</form>
+
+</body>
+</html>

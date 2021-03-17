@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+</head>
+
+<body>
+	<div id='success'>
+		<h1> Uploaded Successfully! (: </h1>
+
+		<!-- Display name and photo -->
+		<img src="{{ obj.photo.url }}" alt="photo"  height="20%" width="20%" class="photo-display">
+		<h3> {{ obj.name }} </h3>
+
+		<!-- Allow user to upload more / go back to home page -->
+		<a href=""> <button> Upload more </button></a>
+	
+	</div>
+</body>
+
+</html>

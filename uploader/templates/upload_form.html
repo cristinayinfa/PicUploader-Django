@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+</head>
+
+<!-- Upload form display -->
+<body>
+<h2> Photo Uploader </h2>
+<form id= 'upload_form' action="." method = 'POST' enctype='multipart/form-data'> {% csrf_token %}
+	{{ form.as_p }}
+<button type = 'submit'> Submit </button>
+</form>
+
+<hr><br>
+
+<!-- Gallery display -->
+<h2> Gallery </h2>
+
+<div class="flex-container">
+{% for i in pic %}
+    <div>   
+        <img src="{{ i.photo.url }}" class="photo-display"></br>
+        <h2 class="text-center" >{{i.name}}</h2>
+        <a href="{% url 'edit_form' i.id %}"> <button> Edit </button></a>
+    </div>
+    
+    <!-- display rows of four pictures -->
+    {% if forloop.counter|divisibleby:4 and not forloop.last%} 
+	</div>
+    <div class="flex-container">
+ 	{% endif %}
+
+    <!-- if we reach the last photo we close the div -->
+    {% if forloop.last %}
+	</div>
+    {% endif %}
+
+    <!-- Let user know when the photo repository is empty -->
+    {% empty %}
+	<h2 class="text-center" > Your photos will display here :) </h2>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+  
+*{
+  text-align: center;
+  font-family: Garamond, serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input{
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+button, a.button {
+  background-color: #47bbc8;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #2699a6;
+}
+
+#upload_form, #success, #edit_form{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.flex-container { 
+  display: flex;
+  flex-direction: column
+  justify-content: center;
+  margin-left: 1.6vw;
+}
+
+.flex-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px; 
+}
+
+img{
+  width:300px;
+  height:auto;
+}
